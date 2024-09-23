@@ -65,6 +65,8 @@ Write-Host
 $filePath = $filePath -replace '"', ''
 $destinationPath = $destinationPath -replace '"', ''
 
+$destinationPath = $destinationPath.TrimEnd('\')
+
 if (-not (Test-Path $filePath -PathType Leaf)) {
     Write-Host "The specified file does not exist: $filePath"
     return
